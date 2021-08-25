@@ -20,7 +20,7 @@ data "aws_ami" "amazon_linux" {
 
 #Bastion SSH
 resource "aws_instance" "bastion" {
-  ami                         = data.aws_ami.amazon_linux.id
+  ami                         = var.amiid #data.aws_ami.amazon_linux.id
   key_name                    = aws_key_pair.bastion_key.key_name
   instance_type               = "t2.micro"
   subnet_id                   =  var.subnet_id

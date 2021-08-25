@@ -14,6 +14,6 @@ variable "vpc_cidr" {}
 variable "subnet_pub_a_cidr" {}
 
 #BASTION
-
+variable "amiid" {}
 variable "public_key_bastion" {}
 

@@ -14,7 +14,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket  = "terraform-devsecops-devco.im.terraform"
-    key     = "terraform/infra_iac_curso/terraform.tfstate"
+    key     = "terraform/infra_iac_curso/jenkins/terraform.tfstate"
     region  = "us-east-1"
     profile = "default"
   }
@@ -47,5 +47,6 @@ module "bastion" {
   subnet_id   = module.networking.subnet_pub_a_id
   public_key  = var.public_key_bastion
   sg-bastion  = module.security.ec2_security_group_ssh_id
+  amiid = var.amiid
 
 }
