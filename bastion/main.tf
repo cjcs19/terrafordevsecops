@@ -3,20 +3,20 @@ locals {
   module_name = "bastion"
 }
 
-data "aws_ami" "amazon_linux" {
-  most_recent = true
-
-  owners = ["306192109948"]
-
-  filter {
-    name = "name"
-
-    values = [
-      "app-cesar-1629766623",
-    ]
-  }
-  
-}
+#data "aws_ami" "amazon_linux" {
+#  most_recent = true
+#
+#  owners = ["306192109948"]
+#
+#  filter {
+#    name = "name"
+#
+#    values = [
+#      "app-cajecasu-1630595394",
+#    ]
+#  }
+#
+#}
 
 #Bastion SSH
 resource "aws_instance" "bastion" {
